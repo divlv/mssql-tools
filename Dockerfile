@@ -9,7 +9,10 @@ ARG MSSQLTOOLS_VERSION=17.7.1.1-1
 USER root
 
 RUN set -x \
-  && tempDir="$(mktemp -d)" \
+  && echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories \
+  && apk update \
+  && apk add --update curl \
+   && tempDir="$(mktemp -d)" \
   && chown nobody:nobody $tempDir \
   && cd $tempDir \
   && wget "https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac7-8d28ddafb39b/msodbcsql17_${MSSODBCSQL_VERSION}_amd64.apk" \

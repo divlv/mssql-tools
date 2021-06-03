@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.13.5
 
 LABEL maintainer="mr.lioncub" \
       link1="https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server"
